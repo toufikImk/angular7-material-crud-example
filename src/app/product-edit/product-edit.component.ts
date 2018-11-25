@@ -20,7 +20,7 @@ export class ProductEditComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.getProduct(this.route.snapshot.params['id']);
+    this.api.getProduct(this.route.snapshot.params['id']);
     this.productForm = this.formBuilder.group({
       'prod_name' : [null, Validators.required],
       'prod_desc' : [null, Validators.required],
